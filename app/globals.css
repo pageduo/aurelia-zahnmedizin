@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-porcelain: #f6f2eb;
+  --color-sand: #ece5d8;
+  --color-cream: #efe9de;
+  --color-ink: #0d2321;
+  --color-pine: #16403c;
+  --color-sage: #8aa49c;
+  --color-gold: #c6a15b;
+  --color-gold-soft: #e3cfa4;
+  --color-stone: #5f6f6a;
+
+  --font-serif: var(--font-fraunces), "Georgia", serif;
+  --font-sans: var(--font-manrope), "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--color-porcelain);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-ink);
+}
+
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Karteikarten: feine Linierung wie auf einer Karteikarte */
+.ruled-card {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 35px,
+    rgba(13, 35, 33, 0.08) 35px,
+    rgba(13, 35, 33, 0.08) 36px
+  );
+}
+
+/* Dezente Punktstruktur für dunkle Sektionen */
+.dark-texture {
+  background-image: radial-gradient(rgba(246, 242, 235, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Scroll-Indikator im Hero */
+@keyframes scroll-line {
+  0% { transform: scaleY(0); transform-origin: top; }
+  45% { transform: scaleY(1); transform-origin: top; }
+  55% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+.scroll-line::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100%;
+  background: currentColor;
+  animation: scroll-line 2.2s ease-in-out infinite;
+}
