@@ -33,32 +33,56 @@ export default function Header() {
 
   return (
     <>
-      {/* Obere Leiste: Logo links, Kontakt-Slot rechts */}
+      {/* Navigationsleiste: Logo links, Menüpunkte + Telefon + Kontakt-Button rechts */}
       <header
         className={`fixed inset-x-0 top-0 z-40 text-porcelain transition-all duration-500 ${
           scrolled && !open ? "bg-ink/90 shadow-lg shadow-ink/20 backdrop-blur-md" : "bg-transparent"
         }`}
       >
-        <div className="flex items-center justify-between px-6 py-5 lg:px-12">
+        <div className="flex items-center justify-between gap-6 px-6 py-5 lg:px-10">
           <Logo />
-          <div className="flex items-center gap-6">
+
+          {/* Horizontale Navigation (Desktop) */}
+          <nav aria-label="Hauptnavigation" className="hidden items-center gap-6 lg:flex xl:gap-8">
+            {nav.map((item) => {
+              const active = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`group relative whitespace-nowrap text-[0.7rem] font-semibold uppercase tracking-[0.18em] transition-colors duration-300 ${
+                    active ? "text-gold" : "text-porcelain/85 hover:text-gold-soft"
+                  }`}
+                >
+                  {item.short}
+                  <span
+                    className={`absolute -bottom-1.5 left-0 h-px bg-gold transition-all duration-300 ${
+                      active ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  />
+                </Link>
+              );
+            })}
+          </nav>
+
+          <div className="flex items-center gap-5">
             <a
               href={site.phoneHref}
-              className="hidden text-sm tracking-wide text-porcelain/80 transition-colors hover:text-gold md:block"
+              className="hidden whitespace-nowrap text-sm tracking-wide text-porcelain/80 transition-colors hover:text-gold xl:block"
             >
               {site.phone}
             </a>
             <Link
-              href="/ueber-uns#kontakt"
-              className="hidden rounded-full border border-gold/70 bg-gold/10 px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-gold-soft backdrop-blur-sm transition-all duration-300 hover:bg-gold hover:text-ink sm:block"
+              href="/termin"
+              className="hidden whitespace-nowrap rounded-full border border-gold/70 bg-gold/10 px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-gold-soft backdrop-blur-sm transition-all duration-300 hover:bg-gold hover:text-ink sm:block"
             >
-              Termin anfragen
+              Termin buchen
             </Link>
             {/* Burger (mobil & Tablet) */}
             <button
               onClick={() => setOpen(!open)}
               aria-label={open ? "Menü schließen" : "Menü öffnen"}
-              className="relative z-50 flex h-11 w-11 flex-col items-center justify-center gap-[7px] rounded-full border border-porcelain/25 xl:hidden"
+              className="relative z-50 flex h-11 w-11 flex-col items-center justify-center gap-[7px] rounded-full border border-porcelain/25 lg:hidden"
             >
               <span
                 className={`block h-px w-5 bg-current transition-transform duration-300 ${open ? "translate-y-1 rotate-45" : ""}`}
@@ -71,41 +95,6 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Vertikale Navigation rechts (Desktop) */}
-      <nav
-        aria-label="Hauptnavigation"
-        className="fixed right-8 top-1/2 z-40 hidden -translate-y-1/2 flex-col items-end gap-6 xl:flex"
-      >
-        {nav.map((item) => {
-          const active = pathname === item.href;
-          return (
-            <Link key={item.href} href={item.href} className="group flex items-center justify-end gap-3">
-              <span
-                className={`whitespace-nowrap text-xs uppercase tracking-[0.22em] transition-all duration-300 ${
-                  active
-                    ? "translate-x-0 text-gold opacity-100"
-                    : "translate-x-2 text-porcelain opacity-0 mix-blend-difference group-hover:translate-x-0 group-hover:opacity-100"
-                }`}
-              >
-                {item.label}
-              </span>
-              <span
-                className={`text-[0.65rem] font-semibold tracking-widest transition-colors duration-300 ${
-                  active ? "text-gold" : "text-porcelain mix-blend-difference"
-                }`}
-              >
-                {item.n}
-              </span>
-              <span
-                className={`block h-px transition-all duration-300 ${
-                  active ? "w-10 bg-gold" : "w-5 bg-porcelain mix-blend-difference group-hover:w-10"
-                }`}
-              />
-            </Link>
-          );
-        })}
-      </nav>
-
       {/* Vollbild-Overlay (mobil) */}
       <AnimatePresence>
         {open && (
@@ -114,7 +103,7 @@ export default function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35 }}
-            className="dark-texture fixed inset-0 z-40 flex flex-col justify-between bg-ink px-6 pb-10 pt-28 text-porcelain"
+            className="dark-texture fixed inset-0 z-40 flex flex-col justify-between overflow-y-auto bg-ink px-6 pb-10 pt-28 text-porcelain"
           >
             <nav className="flex flex-col gap-2" aria-label="Mobile Navigation">
               {nav.map((item, i) => (
@@ -137,12 +126,24 @@ export default function Header() {
                   </Link>
                 </motion.div>
               ))}
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.08 * nav.length + 0.1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <Link
+                  href="/termin"
+                  className="mt-6 inline-block rounded-full bg-gold px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-ink"
+                >
+                  Online Termin buchen
+                </Link>
+              </motion.div>
             </nav>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="space-y-1 text-sm text-porcelain/60"
+              transition={{ delay: 0.7 }}
+              className="mt-10 space-y-1 text-sm text-porcelain/60"
             >
               <p>
                 {site.address.street} · {site.address.zip} {site.address.city}

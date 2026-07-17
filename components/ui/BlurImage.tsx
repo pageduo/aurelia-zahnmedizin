@@ -8,7 +8,7 @@ export default function BlurImage({ className = "", ...props }: ImageProps) {
   const ref = useRef<HTMLImageElement>(null);
   const [loaded, setLoaded] = useState(false);
 
-  // Bilder aus dem Browser-Cache feuern kein onLoad mehr — Zustand nachziehen.
+  // Bilder aus dem Browser-Cache feuern kein onLoad mehr - Zustand nachziehen.
   useEffect(() => {
     if (ref.current?.complete) setLoaded(true);
   }, []);

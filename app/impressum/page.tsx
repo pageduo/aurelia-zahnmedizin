@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Impressum · AURELIA Zahnmedizin — Demo",
+  title: "Impressum · AURELIA Zahnmedizin - Demo",
 };
 
 export default function ImpressumPage() {
   return (
     <div className="bg-porcelain">
       <div className="mx-auto max-w-3xl px-6 pb-24 pt-40">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gold sm:text-base">
           <span className="mr-2 opacity-60">{"//"}</span>Rechtliches
         </p>
         <h1 className="mt-4 font-serif text-5xl text-ink">Impressum</h1>
 
         <div className="mt-8 rounded-xl border border-gold/40 bg-cream p-6 text-sm leading-relaxed text-stone">
           <strong className="text-ink">Hinweis:</strong> Dies ist eine Demo-Website einer Webagentur. „AURELIA
-          Zahnmedizin“ ist ein fiktives Unternehmen — alle nachfolgenden Angaben sind Platzhalter und haben keine
+          Zahnmedizin“ ist ein fiktives Unternehmen - alle nachfolgenden Angaben sind Platzhalter und haben keine
           rechtliche Gültigkeit.
         </div>
 
@@ -43,7 +43,7 @@ export default function ImpressumPage() {
             <p className="mt-3">
               Berufsbezeichnung: Zahnärztin/Zahnarzt (verliehen in der Bundesrepublik Deutschland) · Zuständige
               Kammer: Zahnärztekammer Hamburg · Es gelten berufsrechtliche Regelungen (u. a. Heilberufsgesetz,
-              Berufsordnung der Zahnärztekammer). — Platzhalterangaben für Demo-Zwecke.
+              Berufsordnung der Zahnärztekammer). - Platzhalterangaben für Demo-Zwecke.
             </p>
           </section>
         </div>

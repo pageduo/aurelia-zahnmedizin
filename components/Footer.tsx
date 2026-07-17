@@ -28,7 +28,7 @@ export default function Footer() {
         {/* Abschluss-CTA */}
         <div className="flex flex-col items-start justify-between gap-8 border-b border-porcelain/10 pb-14 lg:flex-row lg:items-end">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gold sm:text-base">
               <span className="mr-2 opacity-60">{"//"}</span>Kontakt
             </p>
             <p className="mt-4 max-w-xl font-serif text-4xl leading-tight sm:text-5xl">
@@ -36,10 +36,10 @@ export default function Footer() {
             </p>
           </div>
           <Link
-            href="/ueber-uns#kontakt"
+            href="/termin"
             className="rounded-full bg-gold px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-ink transition-transform hover:scale-105"
           >
-            Termin anfragen
+            Online Termin buchen
           </Link>
         </div>
 
@@ -76,6 +76,11 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/termin" className="text-gold-soft transition-colors hover:text-gold">
+                  Online-Termin
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -121,7 +126,7 @@ export default function Footer() {
         <div className="flex flex-col gap-3 border-t border-porcelain/10 pt-8 text-xs text-porcelain/40 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 AURELIA Zahnmedizin, {site.city}. Alle Rechte vorbehalten.</p>
           <p>
-            Demo-Vorlage — kein echtes Unternehmen. Alle Namen, Daten und Fälle sind fiktiv. Gestaltung:{" "}
+            Demo-Vorlage - kein echtes Unternehmen. Alle Namen, Daten und Fälle sind fiktiv. Gestaltung:{" "}
             <span className="text-porcelain/60">PageDuo</span>
           </p>
         </div>

@@ -9,7 +9,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function Hero() {
   return (
-    <section className="relative flex h-svh items-end overflow-hidden bg-ink text-porcelain">
+    <section id="start" className="relative flex h-svh items-end overflow-hidden bg-ink text-porcelain">
       <motion.div
         initial={{ scale: 1.12 }}
         animate={{ scale: 1 }}
@@ -32,10 +32,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease }}
-          className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-soft"
+          className="text-sm font-semibold uppercase tracking-[0.3em] text-gold-soft"
         >
           <span className="mr-2 opacity-60">{"//"}</span>
-          Privatpraxis für Zahnmedizin — Neuer Wall, Hamburg
+          Privatpraxis für Zahnmedizin - Neuer Wall, Hamburg
         </motion.p>
 
         <motion.h1
@@ -53,7 +53,7 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.6, ease }}
           className="mt-6 max-w-2xl font-serif text-2xl leading-snug text-porcelain/90 sm:text-3xl"
         >
-          Zahnheilkunde, die man <em className="text-gold-soft">nicht spürt</em> — aber jeden Tag sieht.
+          Zahnheilkunde, die man <em className="text-gold-soft">nicht spürt</em> - aber jeden Tag sieht.
         </motion.p>
 
         <motion.p
@@ -73,10 +73,10 @@ export default function Hero() {
           className="mt-10"
         >
           <Link
-            href="/ueber-uns#kontakt"
+            href="/termin"
             className="inline-block rounded-full bg-gold px-9 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-ink transition-transform duration-300 hover:scale-105"
           >
-            Termin anfragen
+            Online Termin buchen
           </Link>
         </motion.div>
       </div>

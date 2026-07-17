@@ -7,7 +7,7 @@ import { img, u } from "@/lib/images";
 
 export default function Intro() {
   return (
-    <section className="overflow-hidden bg-porcelain py-24 lg:py-36">
+    <section id="praxis" className="overflow-hidden bg-porcelain py-24 lg:py-36">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="grid gap-14 lg:grid-cols-2 lg:gap-20">
           <SectionHeading
@@ -26,7 +26,7 @@ export default function Intro() {
             </p>
             <p>
               Drei spezialisierte Zahnärztinnen und Zahnärzte, ein eigenes Prophylaxe-Team und Diagnostik, die
-              sonst nur Universitätskliniken bieten — unter einem Dach, mit einem Anspruch:{" "}
+              sonst nur Universitätskliniken bieten - unter einem Dach, mit einem Anspruch:{" "}
               <span className="text-ink">Ergebnisse, die man nicht als Zahnersatz erkennt.</span>
             </p>
             <Link

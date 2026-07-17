@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const fieldClass =
   "w-full rounded-lg border border-ink/15 bg-porcelain px-4 py-3.5 text-sm text-ink placeholder:text-stone/60 outline-none transition-all focus:border-gold focus:ring-2 focus:ring-gold/30";
 
-/** Demo-Kontaktformular: validiert, animiert — versendet aber nichts (statische Demo). */
+/** Demo-Kontaktformular: validiert, animiert - versendet aber nichts (statische Demo). */
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
 
@@ -68,14 +68,14 @@ export default function ContactForm() {
                 <option>Ästhetische Zahnheilkunde</option>
                 <option>Implantologie</option>
                 <option>Prophylaxe-Termin</option>
-                <option>Angstpatient — behutsamer Einstieg</option>
+                <option>Angstpatient - behutsamer Einstieg</option>
                 <option>Sonstiges</option>
               </select>
             </div>
             <textarea
               name="message"
               rows={5}
-              placeholder="Ihre Nachricht — was können wir für Sie tun?"
+              placeholder="Ihre Nachricht - was können wir für Sie tun?"
               className={fieldClass}
             />
             <label className="flex items-start gap-3 text-xs leading-relaxed text-stone">

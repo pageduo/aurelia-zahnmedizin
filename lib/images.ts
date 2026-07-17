@@ -1,4 +1,4 @@
-// Zentrale Bildverwaltung — alle Motive: Unsplash (lizenzfrei), visuell geprüft.
+// Zentrale Bildverwaltung - alle Motive: Unsplash (lizenzfrei), visuell geprüft.
 // Ein Motiv tauschen = nur hier die ID ändern.
 
 export function u(id: string, w = 1600): string {

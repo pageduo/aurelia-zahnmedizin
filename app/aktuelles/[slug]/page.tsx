@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
   return {
-    title: post ? `${post.title} · AURELIA Zahnmedizin — Demo` : "Beitrag · AURELIA Zahnmedizin — Demo",
+    title: post ? `${post.title} · AURELIA Zahnmedizin - Demo` : "Beitrag · AURELIA Zahnmedizin - Demo",
     description: post?.excerpt,
   };
 }
@@ -71,7 +71,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       {/* Weiterlesen */}
       <section className="bg-sand py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gold sm:text-base">
             <span className="mr-2 opacity-60">{"//"}</span>Weiterlesen
           </p>
           <div className="mt-8 grid gap-8 md:grid-cols-2">

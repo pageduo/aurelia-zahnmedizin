@@ -8,7 +8,7 @@ import { img, u } from "@/lib/images";
 /** Wiederkehrender Call-to-Action mit Parallax-Hintergrund. */
 export default function CTABand({
   title = "Bereit für Ihr gesündestes Lächeln?",
-  copy = "Der erste Termin ist ein Gespräch — kein Bohrer, kein Zeitdruck. Lernen Sie uns kennen.",
+  copy = "Der erste Termin ist ein Gespräch - kein Bohrer, kein Zeitdruck. Lernen Sie uns kennen.",
 }: {
   title?: string;
   copy?: string;
@@ -24,10 +24,10 @@ export default function CTABand({
           <p className="mx-auto mt-6 max-w-xl text-porcelain/70 sm:text-lg">{copy}</p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="/ueber-uns#kontakt"
+              href="/termin"
               className="rounded-full bg-gold px-9 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-ink transition-transform duration-300 hover:scale-105"
             >
-              Termin anfragen
+              Online Termin buchen
             </Link>
             <a
               href={site.phoneHref}

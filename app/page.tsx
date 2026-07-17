@@ -5,11 +5,13 @@ import ServicesHorizontal from "@/components/home/ServicesHorizontal";
 import CardStack from "@/components/home/CardStack";
 import Stats from "@/components/home/Stats";
 import NewsTeaser from "@/components/home/NewsTeaser";
+import SectionRail from "@/components/home/SectionRail";
 import CTABand from "@/components/CTABand";
 
 export default function Home() {
   return (
     <>
+      <SectionRail />
       <Hero />
       <Intro />
       <TechScrollytelling />

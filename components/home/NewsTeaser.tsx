@@ -7,7 +7,7 @@ import { u } from "@/lib/images";
 
 export default function NewsTeaser() {
   return (
-    <section className="bg-sand py-24 lg:py-32">
+    <section id="aktuelles" className="bg-sand py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading eyebrow="Aktuelles" title={<>Wissen aus der Praxis.</>} />

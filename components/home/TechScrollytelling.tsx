@@ -1,8 +1,8 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
-import BlurImage from "@/components/ui/BlurImage";
 import { Eyebrow } from "@/components/ui/SectionHeading";
 import { techSteps } from "@/lib/data";
 import { u } from "@/lib/images";
@@ -10,6 +10,8 @@ import { u } from "@/lib/images";
 /**
  * Apple-Style Scrollytelling: Die Sektion bleibt gepinnt, während beim
  * Weiterscrollen Bild und Text durch die vier Technologie-Stationen wechseln.
+ * Performance: Alle Bilder bleiben dauerhaft gemountet und werden nur per
+ * CSS-Opacity überblendet - kein Mount/Unmount, kein Ruckeln.
  */
 export default function TechScrollytelling() {
   const ref = useRef<HTMLDivElement>(null);
@@ -17,41 +19,40 @@ export default function TechScrollytelling() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
 
   useMotionValueEvent(scrollYProgress, "change", (v) => {
-    const idx = Math.min(techSteps.length - 1, Math.floor(v * techSteps.length));
-    setActive(idx);
+    const idx = Math.min(techSteps.length - 1, Math.max(0, Math.floor(v * techSteps.length)));
+    if (idx !== active) setActive(idx);
   });
 
   const step = techSteps[active];
 
   return (
-    <section ref={ref} className="relative bg-ink" style={{ height: `${techSteps.length * 120}vh` }}>
+    <section id="technologie" ref={ref} className="relative bg-ink" style={{ height: `${techSteps.length * 110}vh` }}>
       <div className="dark-texture sticky top-0 flex h-svh items-center overflow-hidden">
-        {/* Hintergrundbilder (Crossfade) */}
-        <AnimatePresence mode="popLayout">
-          <motion.div
-            key={step.n}
-            initial={{ opacity: 0, scale: 1.06 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute inset-0"
+        {/* Hintergrundbilder: alle gemountet, Überblendung nur per Opacity */}
+        {techSteps.map((s, i) => (
+          <div
+            key={s.n}
+            aria-hidden={i !== active}
+            className={`absolute inset-0 transition-opacity duration-700 ease-out will-change-[opacity] ${
+              i === active ? "opacity-100" : "opacity-0"
+            }`}
           >
-            <BlurImage src={u(step.image, 2000)} alt={step.title} fill sizes="100vw" className="object-cover" />
+            <Image src={u(s.image, 1800)} alt={s.title} fill sizes="100vw" className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/30" />
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        ))}
 
-        <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-6 lg:grid-cols-[1fr_auto] lg:px-12">
+        <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-6 lg:grid-cols-[1fr_auto] lg:px-12 xl:pr-36">
           <div className="max-w-2xl">
             <Eyebrow light>Diagnostik &amp; Technologie</Eyebrow>
             <div className="relative mt-6 min-h-[19rem] sm:min-h-[17rem]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={step.n}
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 0, y: 32 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -30 }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  exit={{ opacity: 0, y: -24 }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <span className="font-serif text-7xl text-gold/40 sm:text-8xl">{step.n}</span>
                   <h3 className="mt-2 font-serif text-4xl leading-tight text-porcelain sm:text-5xl">{step.title}</h3>

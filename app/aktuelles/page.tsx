@@ -8,7 +8,7 @@ import { formatDate, posts } from "@/lib/data";
 import { img, u } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Aktuelles · AURELIA Zahnmedizin — Demo",
+  title: "Aktuelles · AURELIA Zahnmedizin - Demo",
   description: "Wissen aus der Praxis: Beiträge rund um Zahngesundheit, Ästhetik und Technologie (Demo).",
 };
 
@@ -18,15 +18,15 @@ export default function AktuellesPage() {
   return (
     <>
       <PageHero
-        eyebrow="05 — Aktuelles"
+        eyebrow="05 - Aktuelles"
         title={
           <>
             Wissen aus der <em className="text-gold-soft">Praxis.</em>
           </>
         }
-        copy="Verständlich statt Fachchinesisch: Was Sie über Ihre Zähne wissen sollten — geschrieben von unserem Team."
+        copy="Verständlich statt Fachchinesisch: Was Sie über Ihre Zähne wissen sollten - geschrieben von unserem Team."
         image={u(img.newsHero, 2200)}
-        alt="Moderne Zahnmedizin — Beiträge aus der Praxis"
+        alt="Moderne Zahnmedizin - Beiträge aus der Praxis"
       />
 
       <section className="bg-porcelain py-24 lg:py-32">
@@ -91,7 +91,7 @@ export default function AktuellesPage() {
         </div>
       </section>
 
-      <CTABand title="Fragen zu einem Thema?" copy="Schreiben Sie uns — wir antworten persönlich, nicht mit Textbausteinen." />
+      <CTABand title="Fragen zu einem Thema?" copy="Schreiben Sie uns - wir antworten persönlich, nicht mit Textbausteinen." />
     </>
   );
 }
