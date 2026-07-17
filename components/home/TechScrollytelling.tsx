@@ -26,7 +26,7 @@ export default function TechScrollytelling() {
   const step = techSteps[active];
 
   return (
-    <section id="technologie" ref={ref} className="relative bg-ink" style={{ height: `${techSteps.length * 110}vh` }}>
+    <section id="technologie" ref={ref} className="relative bg-ink" style={{ height: `${techSteps.length * 75}vh` }}>
       <div className="dark-texture sticky top-0 flex h-svh items-center overflow-hidden">
         {/* Hintergrundbilder: alle gemountet, Überblendung nur per Opacity */}
         {techSteps.map((s, i) => (
