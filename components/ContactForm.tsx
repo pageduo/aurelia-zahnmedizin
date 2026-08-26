@@ -68,14 +68,14 @@ export default function ContactForm() {
                 <option>Ästhetische Zahnheilkunde</option>
                 <option>Implantologie</option>
                 <option>Prophylaxe-Termin</option>
-                <option>Angstpatient - behutsamer Einstieg</option>
+                <option>Angstpatient – behutsamer Einstieg</option>
                 <option>Sonstiges</option>
               </select>
             </div>
             <textarea
               name="message"
               rows={5}
-              placeholder="Ihre Nachricht - was können wir für Sie tun?"
+              placeholder="Ihre Nachricht – was können wir für Sie tun?"
               className={fieldClass}
             />
             <label className="flex items-start gap-3 text-xs leading-relaxed text-stone">

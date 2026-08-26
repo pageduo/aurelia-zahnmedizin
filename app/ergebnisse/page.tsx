@@ -6,7 +6,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import { img, u } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Ergebnisse · AURELIA Zahnmedizin - Demo",
+  title: "Ergebnisse · AURELIA Zahnmedizin – Demo",
   description: "Ausgewählte Behandlungsergebnisse der Privatpraxis AURELIA (Demo, fiktive Fälle).",
 };
 
@@ -14,7 +14,7 @@ export default function ErgebnissePage() {
   return (
     <>
       <PageHero
-        eyebrow="04 - Ergebnisse"
+        eyebrow="04 – Ergebnisse"
         title={
           <>
             Arbeit, die man <em className="text-gold-soft">nicht sieht.</em>
@@ -30,7 +30,7 @@ export default function ErgebnissePage() {
           <SectionHeading
             eyebrow="Fallgalerie"
             title={<>Sechs Geschichten, sechs Lächeln.</>}
-            copy="Bewegen Sie den Mauszeiger über die Fälle - und klicken Sie für Details. Alle Fälle sind für diese Demo fiktiv."
+            copy="Bewegen Sie den Mauszeiger über die Fälle – und klicken Sie für Details. Alle Fälle sind für diese Demo fiktiv."
           />
         </div>
       </section>
@@ -39,7 +39,7 @@ export default function ErgebnissePage() {
 
       <CTABand
         title="Ihr Fall könnte der nächste sein."
-        copy="Erzählen Sie uns, was Sie sich wünschen - wir zeigen Ihnen vorab digital, was möglich ist."
+        copy="Erzählen Sie uns, was Sie sich wünschen – wir zeigen Ihnen vorab digital, was möglich ist."
       />
     </>
   );

@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 export function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
   return (
     <p className={`text-sm font-semibold uppercase tracking-[0.3em] sm:text-base ${light ? "text-gold-soft" : "text-gold"}`}>
-      <span className="mr-2 opacity-60">{"//"}</span>
+      <span aria-hidden className="mr-4 inline-block h-px w-8 bg-current align-middle opacity-50" />
       {children}
     </p>
   );

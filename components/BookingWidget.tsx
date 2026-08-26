@@ -298,7 +298,7 @@ export default function BookingWidget() {
                   className="flex min-h-40 flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-pine/40 bg-porcelain/40 p-6 text-center transition-all duration-300 hover:border-gold hover:shadow-md"
                 >
                   <span className="font-serif text-lg text-pine">Nächstmöglicher Termin</span>
-                  <span className="text-sm text-stone">Behandler egal - Hauptsache bald</span>
+                  <span className="text-sm text-stone">Behandler egal – Hauptsache bald</span>
                 </button>
               )}
             </div>
@@ -382,7 +382,7 @@ export default function BookingWidget() {
               </p>
               {!dateKey && <p className="mt-4 text-stone">Bitte wählen Sie links einen Tag aus.</p>}
               {dateKey && slotsForDay.length === 0 && (
-                <p className="mt-4 text-stone">An diesem Tag sind leider keine Termine frei - bitte wählen Sie einen anderen Tag.</p>
+                <p className="mt-4 text-stone">An diesem Tag sind leider keine Termine frei – bitte wählen Sie einen anderen Tag.</p>
               )}
               {dateKey && slotsForDay.length > 0 && (
                 <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">

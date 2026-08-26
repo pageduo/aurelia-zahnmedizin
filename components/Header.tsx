@@ -21,6 +21,18 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const [menuPfad, setMenuPfad] = useState(pathname);
+
+  /*
+   * Routenwechsel schlieszt das Menue. Die Anpassung passiert beim Rendern
+   * statt in einem Effekt: React verwirft den angefangenen Durchlauf sofort
+   * und rendert neu, statt das offene Menue erst zu zeigen und dann wieder
+   * zuzuklappen. Als Effekt geschrieben brach es auszerdem den Lint.
+   */
+  if (menuPfad !== pathname) {
+    setMenuPfad(pathname);
+    setOpen(false);
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -28,8 +40,6 @@ export default function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => setOpen(false), [pathname]);
 
   return (
     <>

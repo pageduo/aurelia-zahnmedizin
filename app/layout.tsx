@@ -18,7 +18,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "AURELIA Zahnmedizin · Privatpraxis Hamburg - Demo",
+  title: "AURELIA Zahnmedizin · Privatpraxis Hamburg – Demo",
   description:
     "Privatpraxis für moderne Zahnheilkunde am Neuen Wall, Hamburg: digitale Diagnostik, Implantologie, Ästhetik. Demo-Website, kein echtes Unternehmen.",
   robots: { index: false, follow: false },

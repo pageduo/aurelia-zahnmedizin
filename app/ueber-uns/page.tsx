@@ -10,7 +10,7 @@ import { hours, site } from "@/lib/data";
 import { img, u } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Über uns & Kontakt · AURELIA Zahnmedizin - Demo",
+  title: "Über uns & Kontakt · AURELIA Zahnmedizin – Demo",
   description: "Geschichte, Werte und Kontakt der Privatpraxis AURELIA am Neuen Wall, Hamburg (Demo).",
 };
 
@@ -18,13 +18,13 @@ export default function UeberUnsPage() {
   return (
     <>
       <PageHero
-        eyebrow="06 - Über uns & Kontakt"
+        eyebrow="06 – Über uns & Kontakt"
         title={
           <>
             Eine Praxis mit <em className="text-gold-soft">Haltung.</em>
           </>
         }
-        copy="Wer wir sind, woran wir glauben - und wie Sie uns erreichen."
+        copy="Wer wir sind, woran wir glauben – und wie Sie uns erreichen."
         image={u(img.ueberUns, 2200)}
         alt="Die Praxisräume von AURELIA am Neuen Wall"
       />
@@ -49,7 +49,7 @@ export default function UeberUnsPage() {
               </p>
               <p>
                 Heute arbeiten hier drei spezialisierte Behandler, ein fünfköpfiges Prophylaxe-Team und ein eigenes
-                Praxislabor - vollständig digital, vom ersten Scan bis zur fertigen Keramik.{" "}
+                Praxislabor – vollständig digital, vom ersten Scan bis zur fertigen Keramik.{" "}
                 <span className="text-ink">Was geblieben ist: Wir kennen unsere Patientinnen und Patienten beim Namen.</span>
               </p>
             </Reveal>
@@ -68,7 +68,7 @@ export default function UeberUnsPage() {
           <SectionHeading
             eyebrow="Kontakt"
             title={<>So erreichen Sie uns.</>}
-            copy="Schreiben Sie uns über das Formular oder rufen Sie direkt an - wir melden uns in der Regel innerhalb eines Werktags."
+            copy="Schreiben Sie uns über das Formular oder rufen Sie direkt an – wir melden uns in der Regel innerhalb eines Werktags."
             className="mb-14"
           />
           <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">

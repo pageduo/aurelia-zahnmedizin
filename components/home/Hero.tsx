@@ -34,8 +34,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3, ease }}
           className="text-sm font-semibold uppercase tracking-[0.3em] text-gold-soft"
         >
-          <span className="mr-2 opacity-60">{"//"}</span>
-          Privatpraxis für Zahnmedizin - Neuer Wall, Hamburg
+          <span aria-hidden className="mr-4 inline-block h-px w-8 bg-current align-middle opacity-50" />
+          Privatpraxis für Zahnmedizin – Neuer Wall, Hamburg
         </motion.p>
 
         <motion.h1
@@ -53,7 +53,7 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.6, ease }}
           className="mt-6 max-w-2xl font-serif text-2xl leading-snug text-porcelain/90 sm:text-3xl"
         >
-          Zahnheilkunde, die man <em className="text-gold-soft">nicht spürt</em> - aber jeden Tag sieht.
+          Zahnheilkunde, die man <em className="text-gold-soft">nicht spürt</em> – aber jeden Tag sieht.
         </motion.p>
 
         <motion.p

@@ -6,6 +6,18 @@ import Lenis from "lenis";
 
 let lenis: Lenis | null = null;
 
+/*
+ * Programmatische Spruenge muessen ueber Lenis laufen, nicht ueber
+ * window.scrollTo. Lenis fuehrt eine eigene Scrollposition und laesst einen
+ * nativen weichen Sprung dagegenlaufen, was ruckelt oder mittendrin stehen
+ * bleibt. Der Rueckfall auf window.scrollTo greift, solange Lenis noch nicht
+ * gestartet ist oder der Nutzer Bewegung reduziert hat.
+ */
+export function springeZu(y: number, dauer = 1.1) {
+  if (lenis) lenis.scrollTo(y, { duration: dauer });
+  else window.scrollTo({ top: y, behavior: "smooth" });
+}
+
 export default function SmoothScroll() {
   const pathname = usePathname();
 

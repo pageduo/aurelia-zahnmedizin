@@ -72,7 +72,7 @@ export default function CardStack() {
               Vier Schritte. <em className="text-pine">Kein Stress.</em>
             </>
           }
-          copy="So läuft Ihre Behandlung bei AURELIA ab - vom ersten Gespräch bis zur langfristigen Begleitung."
+          copy="So läuft Ihre Behandlung bei AURELIA ab – vom ersten Gespräch bis zur langfristigen Begleitung."
           className="mb-16 lg:mb-20"
         />
         <div ref={ref} className="flex flex-col gap-[38vh] pb-[10vh]">
@@ -85,7 +85,7 @@ export default function CardStack() {
             href="/ueber-uns#kontakt"
             className="inline-block rounded-full bg-pine px-9 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-porcelain transition-all duration-300 hover:bg-ink"
           >
-            Schritt 01 starten - Kontakt aufnehmen
+            Schritt 01 starten – Kontakt aufnehmen
           </Link>
         </div>
       </div>

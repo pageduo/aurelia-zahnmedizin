@@ -8,7 +8,7 @@ import { img, u } from "@/lib/images";
 /** Wiederkehrender Call-to-Action mit Parallax-Hintergrund. */
 export default function CTABand({
   title = "Bereit für Ihr gesündestes Lächeln?",
-  copy = "Der erste Termin ist ein Gespräch - kein Bohrer, kein Zeitdruck. Lernen Sie uns kennen.",
+  copy = "Der erste Termin ist ein Gespräch – kein Bohrer, kein Zeitdruck. Lernen Sie uns kennen.",
 }: {
   title?: string;
   copy?: string;

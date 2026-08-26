@@ -112,7 +112,7 @@ export default function ResultsGallery() {
                 <h3 className="mt-3 font-serif text-3xl leading-tight text-ink">{openCase.title}</h3>
                 <p className="mt-5 leading-relaxed text-stone">{openCase.text}</p>
                 <p className="mt-6 text-xs text-stone/70">
-                  Hinweis: Demo-Inhalt - Fallbeschreibung und Bild sind fiktiv bzw. Symbolfotos.
+                  Hinweis: Demo-Inhalt – Fallbeschreibung und Bild sind fiktiv bzw. Symbolfotos.
                 </p>
                 <button
                   onClick={() => setOpenCase(null)}

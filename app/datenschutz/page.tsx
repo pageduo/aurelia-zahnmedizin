@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Datenschutz · AURELIA Zahnmedizin - Demo",
+  title: "Datenschutz · AURELIA Zahnmedizin – Demo",
 };
 
 export default function DatenschutzPage() {
@@ -9,7 +9,7 @@ export default function DatenschutzPage() {
     <div className="bg-porcelain">
       <div className="mx-auto max-w-3xl px-6 pb-24 pt-40">
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gold sm:text-base">
-          <span className="mr-2 opacity-60">{"//"}</span>Rechtliches
+          <span aria-hidden className="mr-4 inline-block h-px w-8 bg-current align-middle opacity-50" />Rechtliches
         </p>
         <h1 className="mt-4 font-serif text-5xl text-ink">Datenschutzerklärung</h1>
 
@@ -22,7 +22,7 @@ export default function DatenschutzPage() {
           <section>
             <h2 className="font-serif text-2xl text-ink">1. Verantwortliche Stelle</h2>
             <p className="mt-3">
-              AURELIA Zahnmedizin (fiktiv), Neuer Wall 34, 20354 Hamburg - für diese Demo ohne rechtliche Wirkung.
+              AURELIA Zahnmedizin (fiktiv), Neuer Wall 34, 20354 Hamburg – für diese Demo ohne rechtliche Wirkung.
             </p>
           </section>
           <section>
@@ -45,7 +45,7 @@ export default function DatenschutzPage() {
             <h2 className="font-serif text-2xl text-ink">4. Ihre Rechte</h2>
             <p className="mt-3">
               Nach DSGVO stehen Ihnen Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung,
-              Datenübertragbarkeit und Widerspruch zu. - Platzhaltertext für Demo-Zwecke.
+              Datenübertragbarkeit und Widerspruch zu. – Platzhaltertext für Demo-Zwecke.
             </p>
           </section>
         </div>

@@ -42,7 +42,7 @@ export default function ServicesHorizontal() {
               Sechs Disziplinen, <em className="text-gold-soft">ein Anspruch.</em>
             </h2>
             <p className="mt-6 max-w-md text-porcelain/70">
-              Von der Prophylaxe bis zur navigierten Implantation - scrollen Sie weiter und entdecken Sie unser
+              Von der Prophylaxe bis zur navigierten Implantation – scrollen Sie weiter und entdecken Sie unser
               Spektrum von der Seite.
             </p>
             <div className="mt-8 flex items-center gap-3 text-porcelain/50">
@@ -87,7 +87,7 @@ export default function ServicesHorizontal() {
             <p className="font-serif text-3xl leading-snug text-porcelain sm:text-4xl">
               Nicht sicher, was Sie brauchen?
             </p>
-            <p className="mt-4 text-porcelain/70">Wir finden es gemeinsam heraus - in einem Gespräch, nicht auf einem Behandlungsstuhl.</p>
+            <p className="mt-4 text-porcelain/70">Wir finden es gemeinsam heraus – in einem Gespräch, nicht auf einem Behandlungsstuhl.</p>
             <Link
               href="/ueber-uns#kontakt"
               className="mt-8 rounded-full bg-gold px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-ink transition-transform duration-300 hover:scale-105"

@@ -6,7 +6,7 @@ import { site } from "@/lib/data";
 import { img, u } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Online Termin buchen · AURELIA Zahnmedizin - Demo",
+  title: "Online Termin buchen · AURELIA Zahnmedizin – Demo",
   description: "Buchen Sie Ihren Wunschtermin online: Leistung, Behandler und freie Zeiten direkt auswählen (Demo).",
 };
 
@@ -20,7 +20,7 @@ export default function TerminPage() {
             Ihr Termin, <em className="text-gold-soft">drei Klicks.</em>
           </>
         }
-        copy="Leistung wählen, Behandler aussuchen, freien Termin sichern - rund um die Uhr, ohne Warteschleife."
+        copy="Leistung wählen, Behandler aussuchen, freien Termin sichern – rund um die Uhr, ohne Warteschleife."
         image={u(img.praxisRaum, 2200)}
         alt="Behandlungszimmer der Praxis AURELIA"
       />

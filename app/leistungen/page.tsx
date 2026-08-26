@@ -10,22 +10,22 @@ import { services } from "@/lib/data";
 import { img, u } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Leistungen · AURELIA Zahnmedizin - Demo",
+  title: "Leistungen · AURELIA Zahnmedizin – Demo",
   description: "Ästhetik, Implantologie, Endodontie, Prophylaxe: das Leistungsspektrum der Privatpraxis AURELIA (Demo).",
 };
 
 const specials = [
-  { title: "Behandlung im Dämmerschlaf", text: "Analgosedierung mit Anästhesie-Begleitung - für Angstpatienten und umfangreiche Eingriffe." },
+  { title: "Behandlung im Dämmerschlaf", text: "Analgosedierung mit Anästhesie-Begleitung – für Angstpatienten und umfangreiche Eingriffe." },
   { title: "Lachgas-Sedierung", text: "Die sanfte Alternative: entspannt durch die Behandlung, danach sofort wieder fit." },
-  { title: "Zweitmeinung", text: "Ein unabhängiger Blick auf Ihren Heil- und Kostenplan - ehrlich, auch wenn wir Ihnen abraten." },
-  { title: "Ästhetische Sprechstunde", text: "60 Minuten Analyse mit digitalem Smile Design - sehen Sie Ihr Ergebnis vor der Entscheidung." },
+  { title: "Zweitmeinung", text: "Ein unabhängiger Blick auf Ihren Heil- und Kostenplan – ehrlich, auch wenn wir Ihnen abraten." },
+  { title: "Ästhetische Sprechstunde", text: "60 Minuten Analyse mit digitalem Smile Design – sehen Sie Ihr Ergebnis vor der Entscheidung." },
 ];
 
 export default function LeistungenPage() {
   return (
     <>
       <PageHero
-        eyebrow="02 - Leistungen"
+        eyebrow="02 – Leistungen"
         title={
           <>
             Alles unter <em className="text-gold-soft">einem Dach.</em>
@@ -88,7 +88,7 @@ export default function LeistungenPage() {
               />
               <Reveal delay={0.1}>
                 <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gold sm:text-base">
-                  <span className="mr-2 opacity-60">{"//"}</span>Leistung {s.n}
+                  <span aria-hidden className="mr-4 inline-block h-px w-8 bg-current align-middle opacity-50" />Leistung {s.n}
                 </p>
                 <h2 className="mt-4 font-serif text-4xl leading-tight text-ink sm:text-5xl">{s.title}</h2>
                 <p className="mt-6 text-lg leading-relaxed text-stone">{s.text}</p>
@@ -129,7 +129,7 @@ export default function LeistungenPage() {
 
       <CTABand
         title="Welche Behandlung passt zu Ihnen?"
-        copy="Wir beraten ehrlich - auch dann, wenn die beste Empfehlung lautet: gar keine Behandlung."
+        copy="Wir beraten ehrlich – auch dann, wenn die beste Empfehlung lautet: gar keine Behandlung."
       />
     </>
   );

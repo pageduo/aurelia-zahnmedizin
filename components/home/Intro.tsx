@@ -26,7 +26,7 @@ export default function Intro() {
             </p>
             <p>
               Drei spezialisierte Zahnärztinnen und Zahnärzte, ein eigenes Prophylaxe-Team und Diagnostik, die
-              sonst nur Universitätskliniken bieten - unter einem Dach, mit einem Anspruch:{" "}
+              sonst nur Universitätskliniken bieten – unter einem Dach, mit einem Anspruch:{" "}
               <span className="text-ink">Ergebnisse, die man nicht als Zahnersatz erkennt.</span>
             </p>
             <Link

@@ -8,7 +8,7 @@ import { team } from "@/lib/data";
 import { img, u } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Team · AURELIA Zahnmedizin - Demo",
+  title: "Team · AURELIA Zahnmedizin – Demo",
   description: "Die Zahnärztinnen, Zahnärzte und Spezialistinnen der Privatpraxis AURELIA (Demo).",
 };
 
@@ -16,7 +16,7 @@ export default function TeamPage() {
   return (
     <>
       <PageHero
-        eyebrow="03 - Team"
+        eyebrow="03 – Team"
         title={
           <>
             Menschen, denen man <em className="text-gold-soft">vertraut.</em>
@@ -75,8 +75,8 @@ export default function TeamPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <div className="grid gap-12 lg:grid-cols-3">
             {[
-              { n: "01", title: "Zeit statt Takt", text: "Unsere Termine sind so lang, wie Ihr Befund es braucht - nicht so kurz, wie es die Abrechnung erlaubt." },
-              { n: "02", title: "Erklären statt behandeln", text: "Kein Eingriff, den Sie nicht verstanden haben. Jede Entscheidung fällt gemeinsam - auf Augenhöhe." },
+              { n: "01", title: "Zeit statt Takt", text: "Unsere Termine sind so lang, wie Ihr Befund es braucht – nicht so kurz, wie es die Abrechnung erlaubt." },
+              { n: "02", title: "Erklären statt behandeln", text: "Kein Eingriff, den Sie nicht verstanden haben. Jede Entscheidung fällt gemeinsam – auf Augenhöhe." },
               { n: "03", title: "Können statt Versprechen", text: "Master-Abschlüsse, Zertifizierungen, jährliche Fortbildungen: Qualität ist bei uns dokumentiert, nicht behauptet." },
             ].map((v, i) => (
               <Reveal key={v.n} delay={i * 0.12}>
@@ -91,7 +91,7 @@ export default function TeamPage() {
 
       <CTABand
         title="Lernen Sie uns persönlich kennen."
-        copy="Der erste Termin ist ein Gespräch bei einem Kaffee - kein Behandlungsstuhl, kein Bohrer."
+        copy="Der erste Termin ist ein Gespräch bei einem Kaffee – kein Behandlungsstuhl, kein Bohrer."
       />
     </>
   );

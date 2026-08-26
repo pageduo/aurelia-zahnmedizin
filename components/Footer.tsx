@@ -29,7 +29,7 @@ export default function Footer() {
         <div className="flex flex-col items-start justify-between gap-8 border-b border-porcelain/10 pb-14 lg:flex-row lg:items-end">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gold sm:text-base">
-              <span className="mr-2 opacity-60">{"//"}</span>Kontakt
+              <span aria-hidden className="mr-4 inline-block h-px w-8 bg-current align-middle opacity-50" />Kontakt
             </p>
             <p className="mt-4 max-w-xl font-serif text-4xl leading-tight sm:text-5xl">
               Wir freuen uns auf&nbsp;Sie.
@@ -126,7 +126,7 @@ export default function Footer() {
         <div className="flex flex-col gap-3 border-t border-porcelain/10 pt-8 text-xs text-porcelain/40 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 AURELIA Zahnmedizin, {site.city}. Alle Rechte vorbehalten.</p>
           <p>
-            Demo-Vorlage - kein echtes Unternehmen. Alle Namen, Daten und Fälle sind fiktiv. Gestaltung:{" "}
+            Demo-Vorlage – kein echtes Unternehmen. Alle Namen, Daten und Fälle sind fiktiv. Gestaltung:{" "}
             <span className="text-porcelain/60">PageDuo</span>
           </p>
         </div>

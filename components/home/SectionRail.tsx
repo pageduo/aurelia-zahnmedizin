@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { springeZu } from "@/components/SmoothScroll";
 
 const sections = [
   { id: "start", n: "01", label: "Start" },
@@ -42,7 +43,7 @@ export default function SectionRail() {
 
   const jump = (id: string) => {
     const el = document.getElementById(id);
-    if (el) window.scrollTo({ top: el.offsetTop + 2, behavior: "smooth" });
+    if (el) springeZu(el.offsetTop + 2);
   };
 
   return (
