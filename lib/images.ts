@@ -44,7 +44,7 @@ export const img = {
   fall6: "photo-1567516364473-233c4b6fcfbe", // Zahnfleischästhetik: Lächeln nah, warm
 
   // Aktuelles
-  news1: "photo-1688760117655-bffd7d7c5bf6", // Veneers oder Bleaching
+  news1: "photo-1617812191081-2a24e3f30e45", // Veneers oder Bleaching: offenes Lächeln
   news2: "photo-1606811842243-af7e16970c1f", // Intraoralscanner-Beitrag
   news3: "photo-1588776813941-dcf9c55e84d2", // Dämmerschlaf / OP
   news4: "photo-1629909615957-be38d48fbbe6", // Prophylaxe
