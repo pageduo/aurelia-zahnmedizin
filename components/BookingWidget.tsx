@@ -27,7 +27,7 @@ function mulberry32(seed: number) {
   };
 }
 
-/** Öffnungszeiten wie auf der Website: Mo-Do 8-19, Fr 8-15, Sa 9-13, So geschlossen. */
+/** Öffnungszeiten wie auf der Website: Mo–Do 8–19, Fr 8–15, Sa 9–13, So geschlossen. */
 function daySlots(dateKey: string, staffId: string): string[] {
   const d = new Date(dateKey + "T00:00:00");
   const dow = d.getDay();
@@ -174,7 +174,7 @@ export default function BookingWidget() {
             transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
           />
         </motion.svg>
-        <h3 className="mt-6 font-serif text-3xl text-ink">Termin reserviert!</h3>
+        <h2 className="mt-6 font-serif text-3xl text-ink">Termin reserviert!</h2>
         <p className="mt-4 text-stone">
           <strong className="text-ink">{service.title}</strong>
           <br />
@@ -236,7 +236,7 @@ export default function BookingWidget() {
                 }`}
               >
                 <div className="flex items-baseline justify-between gap-3">
-                  <h3 className="font-serif text-xl text-ink">{s.title}</h3>
+                  <span className="block font-serif text-xl text-ink">{s.title}</span>
                   <span className="shrink-0 rounded-full bg-pine/10 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-pine">
                     {s.duration} Min
                   </span>
@@ -282,7 +282,7 @@ export default function BookingWidget() {
                     />
                   </div>
                   <div className="p-4">
-                    <h3 className="font-serif text-lg leading-snug text-ink">{m.name}</h3>
+                    <span className="block font-serif text-lg leading-snug text-ink">{m.name}</span>
                     <p className="mt-1 text-xs uppercase tracking-[0.12em] text-gold">{m.role}</p>
                   </div>
                 </button>
@@ -371,7 +371,7 @@ export default function BookingWidget() {
                 })}
               </div>
               <p className="mt-3 text-xs text-stone/70">
-                Mo-Do 08-19 Uhr · Fr 08-15 Uhr · Sa nach Vereinbarung · So geschlossen
+                Mo–Do 08–19 Uhr · Fr 08–15 Uhr · Sa nach Vereinbarung · So geschlossen
               </p>
             </div>
 

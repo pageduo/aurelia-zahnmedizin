@@ -23,7 +23,7 @@ export const nav = [
 export const hours = [
   { day: "Montag – Donnerstag", time: "08:00 – 19:00 Uhr" },
   { day: "Freitag", time: "08:00 – 15:00 Uhr" },
-  { day: "Samstag", time: "nach Vereinbarung" },
+  { day: "Samstag", time: "09:00 – 13:00 Uhr" },
 ];
 
 export const services = [
@@ -132,7 +132,18 @@ export const processSteps = [
 ];
 
 export const stats = [
-  { value: 14, suffix: "", label: "Jahre Erfahrung", note: "Privatpraxis seit 2012" },
+  /*
+   * Aus dem Gruendungsjahr gerechnet statt fest eingetragen. Die 14 stimmte
+   * zwar, waere aber zum naechsten Jahreswechsel still falsch geworden, ohne
+   * dass es jemandem auffaellt. Stats ist eine Server-Komponente, der Wert
+   * wird also beim Bauen ermittelt und als Eigenschaft weitergereicht.
+   */
+  {
+    value: new Date().getFullYear() - site.founded,
+    suffix: "",
+    label: "Jahre Erfahrung",
+    note: `Privatpraxis seit ${site.founded}`,
+  },
   { value: 5200, suffix: "+", label: "Patientinnen & Patienten", note: "aus Hamburg und ganz Europa" },
   { value: 4.9, suffix: "", decimals: 1, label: "Google-Bewertung", note: "aus über 600 Rezensionen" },
   { value: 100, suffix: " %", label: "digitale Diagnostik", note: "DVT, Scanner, Smile Design" },

@@ -36,7 +36,7 @@ export default function TerminPage() {
               <a href={site.phoneHref} className="font-semibold text-pine underline decoration-gold underline-offset-4">
                 {site.phone}
               </a>{" "}
-              (Mo-Do 08-19 Uhr, Fr 08-15 Uhr)
+              (Mo–Do 08–19 Uhr, Fr 08–15 Uhr)
             </p>
           </Reveal>
         </div>

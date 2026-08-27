@@ -13,13 +13,13 @@ export const img = {
   praxisDetail: "photo-1606811842243-af7e16970c1f", // ruhige Beratungssituation, grau/weiß
 
   // Technologie (Scrollytelling, Startseite)
-  techDvt: "photo-1600170311833-c2cf5280ce49", // Tablet mit 3D-Röntgen
+  techDvt: "photo-1588776814546-1ffcf47267a5", // Behandler prüft Röntgenbild am Schirm
   techScanner: "photo-1656428964836-78d54bf76231", // Intraoralscanner im Einsatz
   techMikroskop: "photo-1663185551550-f8f56529ac5e", // Behandler mit Lupenbrille
   techSmile: "photo-1619691249147-c5689d88016b", // Patientin betrachtet 3D-Scan
 
   // Leistungen
-  leistungAesthetik: "photo-1773899337978-b8d83bd9b783", // warmes Porträt am Fenster
+  leistungAesthetik: "photo-1611880147493-7542bdb0f024", // offenes Lächeln, warmes Innenlicht
   leistungImplantat: "photo-1588776814546-daab30f310ce", // OP-Team steril
   leistungDiagnostik: "photo-1598531136726-4157529f8cbb", // Scanner & Laptop
   leistungEndo: "photo-1626736985932-c0df2ae07a2e", // Präzisionsarbeit, dunkle Handschuhe

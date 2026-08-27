@@ -31,7 +31,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     <>
       <article>
         <header className="relative flex min-h-[60svh] items-end overflow-hidden bg-ink text-porcelain">
-          <BlurImage src={u(post.image, 2200)} alt={post.title} fill priority sizes="100vw" className="object-cover" />
+          <BlurImage src={u(post.image, 2200)} alt={post.title} fill preload sizes="100vw" className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/25" />
           <div className="relative mx-auto w-full max-w-4xl px-6 pb-16 pt-44">
             <Eyebrow light>
@@ -71,9 +71,9 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       {/* Weiterlesen */}
       <section className="bg-sand py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gold sm:text-base">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.3em] text-gold sm:text-base">
             <span aria-hidden className="mr-4 inline-block h-px w-8 bg-current align-middle opacity-50" />Weiterlesen
-          </p>
+          </h2>
           <div className="mt-8 grid gap-8 md:grid-cols-2">
             {others.map((p) => (
               <Link key={p.slug} href={`/aktuelles/${p.slug}`} className="group flex gap-6">

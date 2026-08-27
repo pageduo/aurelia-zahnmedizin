@@ -20,7 +20,7 @@ export default function PageHero({
 }) {
   return (
     <section className="relative flex min-h-[68svh] items-end overflow-hidden bg-ink text-porcelain">
-      <BlurImage src={image} alt={alt} fill priority sizes="100vw" className="object-cover" />
+      <BlurImage src={image} alt={alt} fill preload sizes="100vw" className="object-cover" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-ink/25" />
       <div className="relative mx-auto w-full max-w-7xl px-6 pb-20 pt-44 lg:px-12">
         <motion.div
