@@ -35,7 +35,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/25" />
           <div className="relative mx-auto w-full max-w-4xl px-6 pb-16 pt-44">
             <Eyebrow light>
-              {post.category} · {formatDate(post.date)}
+              {post.category} · <time dateTime={post.date}>{formatDate(post.date)}</time>
             </Eyebrow>
             <h1 className="mt-5 font-serif text-4xl leading-[1.08] sm:text-5xl lg:text-6xl">{post.title}</h1>
           </div>

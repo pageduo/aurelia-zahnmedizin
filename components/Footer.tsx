@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FooterCta from "./FooterCta";
 import { hours, nav, site } from "@/lib/data";
 
 const legal = [
@@ -35,12 +36,7 @@ export default function Footer() {
               Wir freuen uns auf&nbsp;Sie.
             </p>
           </div>
-          <Link
-            href="/termin"
-            className="rounded-full bg-gold px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-ink transition-transform hover:scale-105"
-          >
-            Online Termin buchen
-          </Link>
+          <FooterCta />
         </div>
 
         {/* Sitemap & Info */}

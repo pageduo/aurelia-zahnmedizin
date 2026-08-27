@@ -38,7 +38,7 @@ export default function NewsTeaser() {
                     {post.category}
                   </span>
                 </div>
-                <p className="mt-5 text-xs uppercase tracking-[0.2em] text-stone">{formatDate(post.date)}</p>
+                <p className="mt-5 text-xs uppercase tracking-[0.2em] text-stone"><time dateTime={post.date}>{formatDate(post.date)}</time></p>
                 <h3 className="mt-2 font-serif text-2xl leading-snug text-ink transition-colors group-hover:text-pine">
                   {post.title}
                 </h3>

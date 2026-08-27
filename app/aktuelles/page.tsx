@@ -48,7 +48,8 @@ export default function AktuellesPage() {
               </div>
               <div className="flex flex-col justify-center p-8 lg:p-14">
                 <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
-                  {featured.category} · {formatDate(featured.date)}
+                  {featured.category} ·{" "}
+                  <time dateTime={featured.date}>{formatDate(featured.date)}</time>
                 </p>
                 <h2 className="mt-4 font-serif text-3xl leading-tight text-ink transition-colors group-hover:text-pine sm:text-4xl">
                   {featured.title}
@@ -79,7 +80,9 @@ export default function AktuellesPage() {
                       {post.category}
                     </span>
                   </div>
-                  <p className="mt-5 text-xs uppercase tracking-[0.2em] text-stone">{formatDate(post.date)}</p>
+                  <p className="mt-5 text-xs uppercase tracking-[0.2em] text-stone">
+                    <time dateTime={post.date}>{formatDate(post.date)}</time>
+                  </p>
                   <h3 className="mt-2 font-serif text-2xl leading-snug text-ink transition-colors group-hover:text-pine">
                     {post.title}
                   </h3>
