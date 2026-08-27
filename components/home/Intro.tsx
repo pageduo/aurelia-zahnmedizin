@@ -48,7 +48,7 @@ export default function Intro() {
             className="aspect-[4/3] md:col-span-7 md:aspect-[16/11]"
           />
           <ParallaxImage
-            src={u(img.praxisRaum, 1200)}
+            src={u(img.praxisRaum, 900, 1400)}
             alt="Behandlungszimmer mit Blick über Hamburg"
             sizes="(min-width: 768px) 40vw, 100vw"
             strength={14}

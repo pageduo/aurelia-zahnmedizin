@@ -59,7 +59,7 @@ export default function ServicesHorizontal() {
               className="group relative flex h-[62vh] w-[80vw] flex-col justify-end overflow-hidden rounded-2xl sm:w-[420px]"
             >
               <BlurImage
-                src={u(s.image, 1000)}
+                src={u(s.image, 900, 1200)}
                 alt={s.title}
                 fill
                 sizes="(min-width: 640px) 420px, 80vw"

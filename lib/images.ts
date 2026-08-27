@@ -1,8 +1,9 @@
 // Zentrale Bildverwaltung - alle Motive: Unsplash (lizenzfrei), visuell geprüft.
 // Ein Motiv tauschen = nur hier die ID ändern.
 
-export function u(id: string, w = 1600): string {
-  return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=75`;
+export function u(id: string, w = 1600, h?: number): string {
+  const hoehe = h ? `&h=${h}` : "";
+  return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}${hoehe}&q=75`;
 }
 
 export const img = {
@@ -35,12 +36,12 @@ export const img = {
 
   // Ergebnisse (Fälle)
   ergebnisseHero: "photo-1610631066894-62452ccb927c",
-  fall1: "photo-1688760116377-516bab574f6a", // Veneers
-  fall2: "photo-1765648763932-43a3e2f8f35c", // Aligner im Berufsalltag
-  fall3: "photo-1758686254593-7c4cd55b2621", // Implantat, Seniorin
+  fall1: "photo-1548382131-e0ebb1f0cdea", // Veneers: offenes Lächeln, Tageslicht
+  fall2: "photo-1611695434369-a8f5d76ceb7b", // Aligner: lachender Mann, Berufsalltag
+  fall3: "photo-1566616213894-2d4e1baee5d8", // Implantat: Seniorin, breites Lächeln
   fall4: "photo-1758600587815-b654d1405e83", // Bleaching
   fall5: "photo-1736741517726-30189ca046ae", // Komplettsanierung, s/w editorial
-  fall6: "photo-1746632452765-05eeadb3c552", // Zahnfleischästhetik, editorial grün
+  fall6: "photo-1567516364473-233c4b6fcfbe", // Zahnfleischästhetik: Lächeln nah, warm
 
   // Aktuelles
   news1: "photo-1688760117655-bffd7d7c5bf6", // Veneers oder Bleaching

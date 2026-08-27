@@ -41,7 +41,7 @@ export default function TeamPage() {
                 <div className="group">
                   <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
                     <BlurImage
-                      src={u(m.image, 1100)}
+                      src={u(m.image, 1000, 1250)}
                       alt={`Porträt: ${m.name}`}
                       fill
                       sizes="(min-width: 640px) 50vw, 100vw"

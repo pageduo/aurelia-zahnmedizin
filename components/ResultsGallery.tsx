@@ -65,7 +65,7 @@ export default function ResultsGallery() {
             >
               <div className="relative aspect-[3/4] overflow-hidden rounded-xl">
                 <BlurImage
-                  src={u(c.image, 900)}
+                  src={u(c.image, 900, 1200)}
                   alt={`${c.category}: ${c.title}`}
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
@@ -103,7 +103,7 @@ export default function ResultsGallery() {
               className="relative grid max-h-[85svh] w-full max-w-3xl overflow-hidden overflow-y-auto rounded-2xl bg-porcelain sm:grid-cols-2"
             >
               <div className="relative aspect-[3/4] sm:aspect-auto">
-                <BlurImage src={u(openCase.image, 1000)} alt={openCase.title} fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover" />
+                <BlurImage src={u(openCase.image, 1000, 1300)} alt={openCase.title} fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover" />
               </div>
               <div className="p-8 sm:p-10">
                 <p className="text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-gold">
