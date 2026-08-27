@@ -29,7 +29,7 @@ export const img = {
 
   // Team
   teamRoth: "photo-1559839734-2b71ea197ec2", // Ärztin im Kittel, warmes Licht
-  teamBerger: "photo-1758691463393-a2aa9900af8a", // Arzt mit Brille, lächelnd
+  teamBerger: "photo-1729162128021-f37dca3ff30d", // Behandler im Kittel, neutraler Grund
   teamLindqvist: "photo-1662837775272-545d8e143ad0", // Zahnärztin lachend am Stuhl
   teamKhan: "photo-1643297654397-97b3201abc7c", // lachende Medizinerin im Freien
 
