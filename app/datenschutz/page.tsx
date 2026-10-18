@@ -1,9 +1,29 @@
 import type { Metadata } from "next";
+import DemoHinweis from "@/components/DemoHinweis";
+import { PAGEDUO_URL } from "@/lib/pageduo";
 
 export const metadata: Metadata = {
   title: "Datenschutz · AURELIA Zahnmedizin – Demo",
 };
 
+const linkKlasse =
+  "group inline-flex items-center gap-3 rounded-full bg-pine px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-porcelain transition-colors duration-300 hover:bg-ink";
+
+function Pfeil() {
+  return (
+    <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">
+      →
+    </span>
+  );
+}
+
+/*
+ * Verantwortlich im Sinne der DSGVO ist, wer ueber die Verarbeitung
+ * entscheidet - hier also die Agentur, die die Demo betreibt, nicht die
+ * erfundene Praxis. Der frueherere Abschnitt zur Google-Maps-Karte ist
+ * entfallen: Die Karte gibt es nicht mehr, und ein Hinweis auf eine
+ * Datenuebertragung, die nicht stattfindet, verwirrt nur.
+ */
 export default function DatenschutzPage() {
   return (
     <div className="bg-porcelain">
@@ -13,40 +33,42 @@ export default function DatenschutzPage() {
         </p>
         <h1 className="mt-4 font-serif text-5xl text-ink">Datenschutzerklärung</h1>
 
-        <div className="mt-8 rounded-xl border border-gold/40 bg-cream p-6 text-sm leading-relaxed text-stone">
-          <strong className="text-ink">Hinweis:</strong> Dies ist eine Demo-Website. Der folgende Text ist ein
-          Platzhalter und ersetzt keine juristisch geprüfte Datenschutzerklärung.
-        </div>
+        <DemoHinweis className="mt-8" />
 
         <div className="mt-10 space-y-8 leading-relaxed text-stone">
           <section>
-            <h2 className="font-serif text-2xl text-ink">1. Verantwortliche Stelle</h2>
+            <h2 className="font-serif text-2xl text-ink">Formulare und Buchung</h2>
             <p className="mt-3">
-              AURELIA Zahnmedizin (fiktiv), Neuer Wall 34, 20354 Hamburg – für diese Demo ohne rechtliche Wirkung.
+              Formulare und Buchungsfunktionen dieser Demo sind deaktiviert. Es werden keine eingegebenen Daten
+              übermittelt oder gespeichert. Für den technischen Betrieb dieser Website gilt die
+              Datenschutzerklärung von PageDuo:
             </p>
+            <a
+              href={`${PAGEDUO_URL}/datenschutz`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${linkKlasse} mt-6`}
+            >
+              Datenschutzerklärung von PageDuo
+              <Pfeil />
+            </a>
           </section>
-          <section>
-            <h2 className="font-serif text-2xl text-ink">2. Datenverarbeitung auf dieser Website</h2>
-            <p className="mt-3">
-              Diese Demo-Website setzt keine Tracking- oder Analyse-Cookies ein. Schriftarten werden lokal
-              ausgeliefert; es findet keine Übertragung an Google-Font-Server statt. Das Kontaktformular versendet
-              in dieser Demo keine Daten.
-            </p>
-          </section>
+
           <section id="cookies" className="scroll-mt-28">
-            <h2 className="font-serif text-2xl text-ink">3. Cookies &amp; externe Karten</h2>
+            <h2 className="font-serif text-2xl text-ink">Cookies</h2>
             <p className="mt-3">
-              Die eingebundene Google-Maps-Karte wird erst nach Ihrer aktiven Zustimmung geladen (Zwei-Klick-Lösung).
-              Erst dann werden Daten (z. B. Ihre IP-Adresse) an Google übertragen. Ohne Zustimmung bleibt die Karte
-              deaktiviert.
+              Diese Demo setzt keine Cookies. Beim Aufruf werden keine Inhalte von Drittanbietern geladen und keine
+              Karten eingebunden.
             </p>
-          </section>
-          <section>
-            <h2 className="font-serif text-2xl text-ink">4. Ihre Rechte</h2>
-            <p className="mt-3">
-              Nach DSGVO stehen Ihnen Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung,
-              Datenübertragbarkeit und Widerspruch zu. – Platzhaltertext für Demo-Zwecke.
-            </p>
+            <a
+              href={`${PAGEDUO_URL}/cookies`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${linkKlasse} mt-6`}
+            >
+              Cookie-Hinweise von PageDuo
+              <Pfeil />
+            </a>
           </section>
         </div>
       </div>

@@ -1,0 +1,5 @@
+# Demo-Website von PageDuo. Das dargestellte Unternehmen ist frei erfunden,
+# die Inhalte gehoeren in keinen Suchindex: Eine erfundene Praxis, die bei
+# Google steht, wird irgendwann fuer eine echte gehalten.
+User-agent: *
+Disallow: /

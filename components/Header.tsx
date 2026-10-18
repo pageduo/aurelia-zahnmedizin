@@ -4,7 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import DemoAction from "./DemoAction";
+import { DEMO_DEAKTIVIERT } from "@/lib/pageduo";
 import { nav, site } from "@/lib/data";
+
+function TelefonSymbol() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
 
 function Logo({ onClick }: { onClick?: () => void }) {
   return (
@@ -78,18 +88,21 @@ export default function Header() {
           <div className="flex items-center gap-3 sm:gap-4">
             {/* Kontakt-Symbole: Telefon & E-Mail, klappen bei Hover/Fokus auf */}
             <div className="hidden items-center gap-2 lg:flex">
-              <a
-                href={site.phoneHref}
-                aria-label={`Anrufen: ${site.phone}`}
+              <DemoAction
+                ariaLabel={`Anrufen: ${site.phone}`}
                 className="group flex h-11 items-center rounded-full border border-porcelain/25 px-3.5 text-porcelain/85 transition-colors duration-300 hover:border-gold hover:text-gold focus-visible:border-gold focus-visible:text-gold"
+                hinweis={
+                  <>
+                    <TelefonSymbol />
+                    <span className="ml-2 whitespace-nowrap text-sm tracking-wide">{DEMO_DEAKTIVIERT}</span>
+                  </>
+                }
               >
-                <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
+                <TelefonSymbol />
                 <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm tracking-wide opacity-0 transition-all duration-300 group-hover:ml-2 group-hover:max-w-52 group-hover:opacity-100 group-focus-visible:ml-2 group-focus-visible:max-w-52 group-focus-visible:opacity-100">
                   {site.phone}
                 </span>
-              </a>
+              </DemoAction>
               <a
                 href={`mailto:${site.email}`}
                 aria-label={`E-Mail schreiben: ${site.email}`}
@@ -181,9 +194,7 @@ export default function Header() {
                 {site.address.street} · {site.address.zip} {site.address.city}
               </p>
               <p>
-                <a href={site.phoneHref} className="hover:text-gold">
-                  {site.phone}
-                </a>{" "}
+                <span>{site.phone}</span>{" "}
                 ·{" "}
                 <a href={`mailto:${site.email}`} className="hover:text-gold">
                   {site.email}

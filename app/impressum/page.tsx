@@ -1,9 +1,19 @@
 import type { Metadata } from "next";
+import DemoHinweis from "@/components/DemoHinweis";
+import { PAGEDUO_EMAIL, PAGEDUO_NAME, PAGEDUO_PARTNERS, PAGEDUO_URL } from "@/lib/pageduo";
 
 export const metadata: Metadata = {
   title: "Impressum · AURELIA Zahnmedizin – Demo",
 };
 
+/*
+ * Das Impressum nennt den Anbieter dieser Website, und der ist nicht die
+ * dargestellte Praxis - die gibt es nicht. Anbieter ist die Agentur, die die
+ * Demo betreibt. Die frueheren Angaben (fiktive Anschrift, Kammer,
+ * Berufsrecht) standen hier als Platzhalter und sind ersatzlos entfallen:
+ * Eine erfundene Kammerzugehoerigkeit ist keine Pflichtangabe, sondern eine
+ * falsche Angabe.
+ */
 export default function ImpressumPage() {
   return (
     <div className="bg-porcelain">
@@ -13,38 +23,38 @@ export default function ImpressumPage() {
         </p>
         <h1 className="mt-4 font-serif text-5xl text-ink">Impressum</h1>
 
-        <div className="mt-8 rounded-xl border border-gold/40 bg-cream p-6 text-sm leading-relaxed text-stone">
-          <strong className="text-ink">Hinweis:</strong> Dies ist eine Demo-Website einer Webagentur. „AURELIA
-          Zahnmedizin“ ist ein fiktives Unternehmen – alle nachfolgenden Angaben sind Platzhalter und haben keine
-          rechtliche Gültigkeit.
-        </div>
+        <DemoHinweis className="mt-8" />
 
         <div className="mt-10 space-y-8 leading-relaxed text-stone">
           <section>
-            <h2 className="font-serif text-2xl text-ink">Angaben gemäß § 5 DDG</h2>
+            <h2 className="font-serif text-2xl text-ink">Anbieter dieser Website</h2>
             <p className="mt-3">
-              AURELIA Zahnmedizin (fiktiv)
+              {PAGEDUO_NAME} – Webdesign, Hamburg
               <br />
-              Dr. med. dent. Helena Roth (fiktiv)
+              Vertreten durch die Gesellschafter {PAGEDUO_PARTNERS.replace(", ", " und ")}
               <br />
-              Neuer Wall 34 · 20354 Hamburg
+              E-Mail:{" "}
+              <a
+                href={`mailto:${PAGEDUO_EMAIL}`}
+                className="underline decoration-gold underline-offset-4 transition-colors hover:text-ink"
+              >
+                {PAGEDUO_EMAIL}
+              </a>
             </p>
           </section>
+
           <section>
-            <h2 className="font-serif text-2xl text-ink">Kontakt</h2>
-            <p className="mt-3">
-              Telefon: +49 (0)40 228 817-0 (Platzhalter)
-              <br />
-              E-Mail: praxis@aurelia-zahnmedizin.de (Platzhalter)
-            </p>
-          </section>
-          <section>
-            <h2 className="font-serif text-2xl text-ink">Berufsrechtliche Angaben</h2>
-            <p className="mt-3">
-              Berufsbezeichnung: Zahnärztin/Zahnarzt (verliehen in der Bundesrepublik Deutschland) · Zuständige
-              Kammer: Zahnärztekammer Hamburg · Es gelten berufsrechtliche Regelungen (u. a. Heilberufsgesetz,
-              Berufsordnung der Zahnärztekammer). – Platzhalterangaben für Demo-Zwecke.
-            </p>
+            <a
+              href={`${PAGEDUO_URL}/impressum`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 rounded-full bg-pine px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-porcelain transition-colors duration-300 hover:bg-ink"
+            >
+              Vollständiges Impressum von PageDuo
+              <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </a>
           </section>
         </div>
       </div>

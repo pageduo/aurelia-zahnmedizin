@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import DemoAction from "./DemoAction";
 import { site } from "@/lib/data";
 
 const knopf =
@@ -20,9 +21,12 @@ export default function FooterCta() {
 
   if (pathname === "/termin") {
     return (
-      <a href={site.phoneHref} className={`${knopf} border border-porcelain/30 text-porcelain hover:border-gold hover:text-gold`}>
+      <DemoAction
+        ariaLabel={`Anrufen: ${site.phone}`}
+        className={`${knopf} border border-porcelain/30 text-porcelain hover:border-gold hover:text-gold`}
+      >
         Lieber anrufen
-      </a>
+      </DemoAction>
     );
   }
 

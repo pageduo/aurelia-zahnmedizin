@@ -32,7 +32,7 @@ export default function TeamPage() {
           <SectionHeading
             eyebrow="Unsere Köpfe"
             title={<>Spezialisiert statt „alles ein bisschen“.</>}
-            copy="Jede Behandlung bei AURELIA liegt in der Hand der Person, die genau dafür ausgebildet ist."
+            copy="Jede Behandlung bei AURELIA liegt in der Hand der Person, die genau dafür ausgebildet ist. Alle Personen, Lebensläufe und Qualifikationen auf dieser Seite sind fiktiv."
             className="mb-16"
           />
           <div className="grid gap-x-8 gap-y-16 sm:grid-cols-2">

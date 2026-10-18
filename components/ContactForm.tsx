@@ -38,18 +38,29 @@ export default function ContactForm() {
                 transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
               />
             </motion.svg>
-            <h3 className="mt-6 font-serif text-3xl text-ink">Vielen Dank!</h3>
+            <h3 className="mt-6 font-serif text-3xl text-ink">Demo: Es wurden keine Daten übermittelt.</h3>
             <p className="mt-3 max-w-sm text-stone">
-              Ihre Anfrage ist angekommen. Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+              So sähe an dieser Stelle die Bestätigung aus. In dieser Vorlage verlässt Ihre Eingabe den Browser
+              nicht: Sie wird weder versendet noch gespeichert.
             </p>
-            <p className="mt-4 text-xs text-stone/60">(Demo: Es wurde keine echte Nachricht versendet.)</p>
+            <button
+              type="button"
+              onClick={() => setSent(false)}
+              className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-pine underline decoration-gold underline-offset-4"
+            >
+              Formular erneut anzeigen
+            </button>
           </motion.div>
         ) : (
           <motion.form
             key="form"
             exit={{ opacity: 0, y: -12 }}
             onSubmit={(e) => {
+              // Nichts verlaesst den Browser: kein fetch, kein mailto, keine
+              // Speicherung. reset() leert die Felder, damit die Eingaben
+              // nicht im Formular stehen bleiben.
               e.preventDefault();
+              e.currentTarget.reset();
               setSent(true);
             }}
             className="space-y-4"

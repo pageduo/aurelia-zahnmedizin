@@ -33,9 +33,7 @@ export default function TerminPage() {
           <Reveal delay={0.1}>
             <p className="mt-10 text-center text-sm text-stone">
               Lieber persönlich? Rufen Sie uns an:{" "}
-              <a href={site.phoneHref} className="font-semibold text-pine underline decoration-gold underline-offset-4">
-                {site.phone}
-              </a>{" "}
+              <span className="font-semibold text-pine">{site.phone}</span>{" "}
               (Mo–Do 08–19 Uhr, Fr 08–15 Uhr)
             </p>
           </Reveal>

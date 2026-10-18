@@ -1,13 +1,27 @@
 import { img } from "./images";
+import { DEMO_SLUG } from "./pageduo";
 
+/*
+ * Die Praxis ist frei erfunden, und ihre Kontaktdaten sind es auch - aber
+ * erfunden reicht nicht, erfunden muss auch unerreichbar sein. Die frueheren
+ * Werte (Neuer Wall 34, eine Hamburger Rufnummer, eine .de-Domain) sahen echt
+ * aus, weil sie echt aussehen sollten. Genau das ist das Problem: Eine
+ * Rufnummer, die jemandem gehoert, klingelt irgendwann wegen einer Praxis,
+ * die es nie gab.
+ *
+ * Deshalb liegt jeder Wert jetzt in einem Bereich, der niemandem gehoeren
+ * kann: `.example` ist nach RFC 2606 reserviert und wird nie vergeben, 20000
+ * ist keine vergebene Postleitzahl, und die Nummer besteht aus Nullen und
+ * steht ohne tel:-Link da, damit sie niemand versehentlich waehlt.
+ */
 export const site = {
   name: "AURELIA",
   claim: "Privatpraxis für Zahnmedizin",
   city: "Hamburg",
-  address: { street: "Neuer Wall 34", zip: "20354", city: "Hamburg" },
-  phone: "+49 (0)40 228 817-0",
-  phoneHref: "tel:+49402288170",
-  email: "praxis@aurelia-zahnmedizin.de",
+  address: { street: "Musterstraße 1", zip: "20000", city: "Hamburg" },
+  /** Nur zur Anzeige. Bewusst ohne tel:-Link, siehe oben. */
+  phone: "+49 (0)40 000 000-00",
+  email: `muster@${DEMO_SLUG}.example`,
   founded: 2012,
 };
 
@@ -144,8 +158,8 @@ export const stats = [
     label: "Jahre Erfahrung",
     note: `Privatpraxis seit ${site.founded}`,
   },
-  { value: 5200, suffix: "+", label: "Patientinnen & Patienten", note: "aus Hamburg und ganz Europa" },
-  { value: 4.9, suffix: "", decimals: 1, label: "Google-Bewertung", note: "aus über 600 Rezensionen" },
+  { value: 5200, suffix: "+", label: "Patientinnen & Patienten", note: "aus Hamburg und ganz Europa (fiktiv)" },
+  { value: 4.9, suffix: "", decimals: 1, label: "Google-Bewertung", note: "aus über 600 Rezensionen (fiktiv)" },
   { value: 100, suffix: " %", label: "digitale Diagnostik", note: "DVT, Scanner, Smile Design" },
 ];
 

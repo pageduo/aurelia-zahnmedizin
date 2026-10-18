@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import BlurImage from "@/components/ui/BlurImage";
-import { bookingServices, team } from "@/lib/data";
+import { bookingServices, site, team } from "@/lib/data";
 import { u } from "@/lib/images";
 
 /* ---------- deterministische Demo-Slots (stabil pro Tag & Behandler) ---------- */
@@ -425,7 +425,10 @@ export default function BookingWidget() {
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.35 }}
             onSubmit={(e) => {
+              // Demo: Die Buchung wird nirgends hingeschickt und nirgends
+              // abgelegt. reset() leert Name, E-Mail und Telefon.
               e.preventDefault();
+              e.currentTarget.reset();
               setConfirmed(true);
             }}
             className="mt-8 grid gap-8 lg:grid-cols-[1fr_1.2fr]"
@@ -443,7 +446,7 @@ export default function BookingWidget() {
                 </li>
                 <li>{slot.time} Uhr · ca. {service.duration} Minuten</li>
                 <li>{staffShort(slot.staffId)}</li>
-                <li>Neuer Wall 34, 20354 Hamburg</li>
+                <li>{site.address.street}, {site.address.zip} {site.address.city}</li>
               </ul>
             </div>
             <div className="space-y-4">
@@ -465,7 +468,7 @@ export default function BookingWidget() {
               >
                 Termin verbindlich reservieren
               </button>
-              <p className="text-xs text-stone/60">Demo-Funktion: Es wird kein echter Termin gebucht.</p>
+              <p className="text-xs text-stone/60">Demo: Es werden keine Daten übermittelt.</p>
             </div>
           </motion.form>
         )}

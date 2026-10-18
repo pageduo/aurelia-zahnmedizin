@@ -1,24 +1,29 @@
 import Link from "next/link";
 import FooterCta from "./FooterCta";
 import { hours, nav, site } from "@/lib/data";
+import { DEMO_DEAKTIVIERT } from "@/lib/pageduo";
 
 const legal = [
   { label: "Impressum", href: "/impressum" },
   { label: "Datenschutz", href: "/datenschutz" },
-  { label: "Cookie-Einstellungen", href: "/datenschutz#cookies" },
+  { label: "Cookie-Hinweise", href: "/datenschutz#cookies" },
 ];
 
-function SocialIcon({ label, href, path }: { label: string; href: string; path: string }) {
+/* Die Symbole bleiben, der Link geht. Ein Profil, auf das sie zeigen
+   koennten, gibt es nicht - und ein Verweis auf das Hauptprofil von
+   Instagram oder LinkedIn waere eine Sackgasse mit fremdem Namen. */
+function SocialIcon({ label, path }: { label: string; path: string }) {
   return (
-    <a
-      href={href}
-      aria-label={label}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-porcelain/20 text-porcelain/70 transition-all hover:border-gold hover:text-gold"
+    <span
+      aria-label={`${label} – ${DEMO_DEAKTIVIERT}`}
+      title={DEMO_DEAKTIVIERT}
+      role="img"
+      className="flex h-10 w-10 cursor-default items-center justify-center rounded-full border border-porcelain/20 text-porcelain/40"
     >
       <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current" aria-hidden>
         <path d={path} />
       </svg>
-    </a>
+    </span>
   );
 }
 
@@ -52,9 +57,7 @@ export default function Footer() {
               {site.address.zip} {site.address.city}
             </p>
             <p className="mt-4 text-sm text-porcelain/60">
-              <a href={site.phoneHref} className="transition-colors hover:text-gold">
-                {site.phone}
-              </a>
+              <span>{site.phone}</span>
               <br />
               <a href={`mailto:${site.email}`} className="transition-colors hover:text-gold">
                 {site.email}
@@ -106,24 +109,29 @@ export default function Footer() {
             <div className="mt-8 flex gap-3">
               <SocialIcon
                 label="Instagram"
-                href="#"
                 path="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2m0 1.8c-3.1 0-3.5 0-4.8.1-1.1.1-1.4.2-1.7.3-.4.2-.7.4-1 .7-.3.3-.5.6-.7 1-.1.3-.2.6-.3 1.7-.1 1.3-.1 1.7-.1 4.8s0 3.5.1 4.8c.1 1.1.2 1.4.3 1.7.2.4.4.7.7 1 .3.3.6.5 1 .7.3.1.6.2 1.7.3 1.3.1 1.7.1 4.8.1s3.5 0 4.8-.1c1.1-.1 1.4-.2 1.7-.3.4-.2.7-.4 1-.7.3-.3.5-.6.7-1 .1-.3.2-.6.3-1.7.1-1.3.1-1.7.1-4.8s0-3.5-.1-4.8c-.1-1.1-.2-1.4-.3-1.7-.2-.4-.4-.7-.7-1-.3-.3-.6-.5-1-.7-.3-.1-.6-.2-1.7-.3-1.3-.1-1.7-.1-4.8-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4zm6.2-8.3a1.1 1.1 0 1 1-2.3 0 1.1 1.1 0 0 1 2.3 0z"
               />
               <SocialIcon
                 label="LinkedIn"
-                href="#"
                 path="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.02 8h4.96V24H.02V8zM8.98 8h4.75v2.18h.07c.66-1.25 2.28-2.57 4.7-2.57 5.02 0 5.95 3.3 5.95 7.6V24h-4.96v-7.75c0-1.85-.03-4.23-2.58-4.23-2.58 0-2.98 2.02-2.98 4.1V24H8.98V8z"
               />
             </div>
           </div>
         </div>
 
-        {/* Copyright + Demo-Hinweis */}
-        <div className="flex flex-col gap-3 border-t border-porcelain/10 pt-8 text-xs text-porcelain/40 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 AURELIA Zahnmedizin, {site.city}. Alle Rechte vorbehalten.</p>
+        {/* Demo-Kennzeichnung: die letzte Zeile der Seite, auf jeder Seite */}
+        <div className="flex flex-col gap-2 border-t border-porcelain/10 pt-8 text-xs text-porcelain/50 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-2">
           <p>
-            Demo-Vorlage – kein echtes Unternehmen. Alle Namen, Daten und Fälle sind fiktiv. Gestaltung:{" "}
-            <span className="text-porcelain/60">PageDuo</span>
+            Demo-Vorlage von PageDuo – kein echtes Unternehmen. Alle Namen, Daten und Inhalte sind fiktiv.
+          </p>
+          <p className="flex gap-2 sm:before:mr-2 sm:before:content-['·']">
+            <Link href="/impressum" className="underline underline-offset-4 transition-colors hover:text-gold">
+              Impressum
+            </Link>
+            <span aria-hidden className="text-porcelain/25">·</span>
+            <Link href="/datenschutz" className="underline underline-offset-4 transition-colors hover:text-gold">
+              Datenschutz
+            </Link>
           </p>
         </div>
       </div>

@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import SmoothScroll from "@/components/SmoothScroll";
+import DemoBadge from "@/components/DemoBadge";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <DemoBadge />
       </body>
     </html>
   );

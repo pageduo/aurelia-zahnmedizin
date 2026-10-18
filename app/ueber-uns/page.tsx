@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
-import MapConsent from "@/components/MapConsent";
+import MapConsent, { MAPS_URL } from "@/components/MapConsent";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ParallaxImage from "@/components/ui/ParallaxImage";
@@ -95,9 +95,7 @@ export default function UeberUnsPage() {
                     {site.address.zip} {site.address.city}
                   </p>
                   <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                      `${site.address.street}, ${site.address.zip} ${site.address.city}`
-                    )}`}
+                    href={MAPS_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group mt-3 inline-flex items-center gap-2 text-sm font-semibold text-pine transition-colors hover:text-gold"
@@ -113,9 +111,7 @@ export default function UeberUnsPage() {
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gold">Direkt</p>
                   <p className="mt-3 text-stone">
-                    <a href={site.phoneHref} className="block text-lg text-ink transition-colors hover:text-pine">
-                      {site.phone}
-                    </a>
+                    <span className="block text-lg text-ink">{site.phone}</span>
                     <a href={`mailto:${site.email}`} className="block transition-colors hover:text-pine">
                       {site.email}
                     </a>
@@ -135,8 +131,8 @@ export default function UeberUnsPage() {
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gold">Anfahrt</p>
                   <p className="mt-3 text-sm leading-relaxed text-stone">
-                    U-Bahn Jungfernstieg (U1/U2/U4, 3 Minuten zu Fuß) · Parkhaus Neuer Wall direkt gegenüber ·
-                    barrierefreier Zugang über den Aufzug im Innenhof.
+                    U-Bahn und Bus in wenigen Minuten zu Fuß · Parkhaus gegenüber · barrierefreier Zugang über
+                    den Aufzug im Innenhof. (Angaben fiktiv)
                   </p>
                 </div>
               </div>

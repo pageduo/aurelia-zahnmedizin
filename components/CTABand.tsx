@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ParallaxImage from "./ui/ParallaxImage";
+import DemoAction from "./DemoAction";
 import Reveal from "./ui/Reveal";
 import { Eyebrow } from "./ui/SectionHeading";
 import { site } from "@/lib/data";
@@ -29,12 +30,12 @@ export default function CTABand({
             >
               Online Termin buchen
             </Link>
-            <a
-              href={site.phoneHref}
+            <DemoAction
+              ariaLabel={`Anrufen: ${site.phone}`}
               className="rounded-full border border-porcelain/30 px-9 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-porcelain transition-colors duration-300 hover:border-gold hover:text-gold"
             >
               {site.phone}
-            </a>
+            </DemoAction>
           </div>
         </Reveal>
       </div>
