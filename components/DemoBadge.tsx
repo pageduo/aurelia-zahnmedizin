@@ -17,6 +17,7 @@ export default function DemoBadge() {
   return (
     <div className="pointer-events-none fixed bottom-3 left-3 z-40 sm:bottom-5 sm:left-5">
       <a
+        data-demo-badge
         href={PAGEDUO_URL}
         target="_blank"
         rel="noopener noreferrer"
