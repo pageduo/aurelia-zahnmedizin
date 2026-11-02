@@ -120,6 +120,22 @@ Keine. Die Symbole sind Inline-SVG im Quelltext. 🟢
 
 ## Zusätzliche Prüfungen
 
+### Nachtrag vom 02.11.2026
+
+Drei Punkte aus dem Prüfauftrag waren im ersten Durchgang nicht ausdrücklich
+abgearbeitet. Hier nachgeholt:
+
+**CSS-Hintergrundbilder.** Keine. Die Flächen sind Farbverläufe, keine Bilder. 🟢
+
+**`og:image`.** Die `metadata.openGraph` dieser Demo enthält **keinen** `images`-Eintrag, und
+es liegt weder `opengraph-image.*` noch `twitter-image.*` im Projekt. Beim
+Teilen entsteht also eine Vorschau **ohne Bild**. Kein Medium, kein Befund —
+aber ein Hinweis fürs Marketing, falls die Demos je geteilt werden sollen.
+
+**Git-Historie je Medium.** Die Datei-Historie wurde für jede im Repo liegende Bilddatei abgefragt
+(`git log --diff-filter=A --follow`). Sie nennt Datum und Commit-Nachricht des
+Hinzufügens, aber in keinem Fall eine Quelle.
+
 ### Öffentliches Repository und Weitergabe der Originaldateien
 
 `pageduo/aurelia-zahnmedizin` ist auf GitHub **öffentlich**. Jede im Repository liegende
